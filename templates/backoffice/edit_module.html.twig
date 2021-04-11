@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un module{% endblock %}
+
+{% block body %}
+<h1>Editer un module </h1>
+
+{{form(form)}}
+
+<a href="{{ path('modules') }}">Retour</a>
+
+
+{% endblock %}

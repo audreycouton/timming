@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7ad49;
+}
+.centrer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.header {
+  width: 100vw;
+  background-color: #f1f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  float: right;
+}
+
+.header-right a {
+  text-decoration: none;
+  background: #a1c3ed;
+  border-radius: 11px;
+  padding: 10px 20px;
+  color: #ffffff;
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+}
+.header-right a:nth-child(2) {
+  background: #7266f1;
+}
+.hero {
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: #f7ad49;
+  max-width: 100%;
+}
+@media only screen and (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-left img {
+  max-width: 70vw;
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.header img {
+  width: 250px;
+}
+/*--------------------------menu backoffice----------------*/
+.flex-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  margin: 60px;
+  width: 30%;
+}
+.card img {
+  width: 100px;
+}
+@media only screen and (max-width: 900px) {
+  .flex-card {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    margin: 10px;
+  }
+}
+.task {
+  margin: 0 auto;
+}
+.forms {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10%;
+  background-color: white;
+}
+.tasks__title {
+  color: white;
+  text-align: center;
+}
+.tasks__subtitle {
+  background-color: #3946ff; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

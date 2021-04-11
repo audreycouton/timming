@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %} {% block title %}Liste des modules{% endblock
+%} {% block body %}
+<div class="header">
+<a href="{{ path('index')}}"><img src="{{ asset( 'img/logo.png' ) }}" alt="logo"></a>
+ <h1>Les modules</h1>
+  <div class="header-right">
+    <a href="{{ path('backoffice')}}">Retour</a>
+    <a href="{{ path('backoffice')}}">Connexion</a>
+  </div>
+</div>
+<div class"task ">
+<a href="{{ path('module_add')}}" class="centrer"><h2 class=" tasks__subtitle">Ajouter un module</h2></a>
+</div>
+<div>
+<div class="container">
+    <table class="forms">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Professeurs</th>
+                <th scope="col">Semestre</th>
+                <th scope="col">Année</th>
+                <th scope="col">Supprimer</th>
+                <th scope="col"> Modification</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for module in modules %}
+            <tr>
+                <th scope="row">
+                    {{ module.name }}
+                </th>
+                <th scope="row">{% for teacher in teachers %}
+                    {% if teacher.module_id == module.id %}
+                    {{ teacher.teacher_name }}
+                    {%endif%}
+                    {% endfor %}
+                </th>
+                <td scope="row">
+                    {{ module.semester}}
+                </td>
+                <td scope="row">
+                    {% for year in table_year %}
+                    {% if year.module_id == module.id %}
+                    {{ year.year_description }}
+                    {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    <form action="{{ path('module_delete' ,{id:module.id})}}" method="POST" class="d-inline">
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="btn" type="submit">Supprimer</button>
+                    </form>
+                </td>
+                <td><a href="{{ path('edit_module', { id: module.id })}}">Editer</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

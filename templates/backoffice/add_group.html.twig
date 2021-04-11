@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TiMMIng - Ajouter un groupe {% endblock %}
+
+{% block body %}
+<div class="header">
+<a href="{{ path('index')}}"><img src="{{ asset( 'img/logo.png' ) }}" alt="logo"></a>
+ <h1>Ajouter un groupe</h1>
+  <div class="header-right">
+    <a href="{{ path('group')}}">Retour</a>
+    <a href="{{ path('backoffice')}}">Connexion</a>
+  </div>
+</div>
+
+<div class="centrer">
+
+{# {{ form(form) }} #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+{{ form_widget(form) }}
+<button class=" tasks__subtitle centrer">Enregistrer le nouveau groupe</button>
+{{ form_end(form) }}
+</div>
+
+{% endblock %}

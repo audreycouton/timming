@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TiMMIng - Backoffice{% endblock %}
+
+{% block body %}
+<div class="header">
+<a href="{{ path('index')}}"><img src="{{ asset( 'img/logo.png' ) }}" alt="logo"></a>
+  <h1> Bienvenue dans le backoffice </h1>
+  <div class="header-right">
+    <a href="{{ path('index')}}">Accueil</a>
+    <a href="{{ path('backoffice')}}">Connexion</a>
+  </div>
+</div>
+
+
+<div class="flex-card centrer">
+  <div class="card card-1">
+<img src ="{{ asset( 'img/tasks.png' ) }}" alt="logo">
+    <a href="{{ path('backoffice_tasks')}}"><h3>Consulter les tâches</h3></a>
+    <p>Liste des devoirs à faire, vous pouvez en créer de nouveaux, les modifier ou les supprimer </p>
+  </div>
+ 
+  <div class="card card-2">
+  <img src ="{{ asset( 'img/teachers.png' ) }}" alt="logo">
+    <a href="{{ path('teachers')}}"><h3>Consulter la liste des professeurs</h3></a>
+    <p>Modifier, supprimer, ajouter des professeurs</p>
+  </div>
+
+  <div class="card card-3">
+  <img src ="{{ asset( 'img/dossier.png' ) }}" alt="logo">
+    <a href="{{ path('modules')}}"><h3>Consulter la liste des modules</h3></a>
+    <p>Modifier, supprimer, ajouter des modules</p>
+  </div>
+    
+      <div class="card card-4">
+      <img src ="{{ asset( 'img/teamwork.png' ) }}" alt="logo">
+        <a href="{{ path('group')}}"><h3>Consulter la liste des groupes de classe</h3></a> 
+        <p>Modifier, supprimer, ajouter les groupes de classe</p>
+    </div>
+</div>
+
+{% endblock %}

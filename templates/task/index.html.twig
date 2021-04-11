@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TiMMIng, l'agenda MMI{% endblock %}
+
+{% block body %}
+
+<div class="header">
+<a href="{{ path('index')}}"><img src="{{ asset( 'img/logo.png' ) }}" alt="logo"></a>
+  
+  <div class="header-right">
+    <a href="{{ path('index')}}">Accueil</a>
+    <a href="{{ path('backoffice')}}">Connexion</a>
+  </div>
+</div>
+<section>
+  <article class="hero">
+    <div class="hero-left">
+      <img src ="{{ asset( 'img/hero.png' ) }}" alt="logo">
+    </div>
+    <div class="hero-right">
+      <h1>Bienvenue sur l'agenda <span>MMI !</span></h1>
+      <p>Retrouvez tous les devoirs à rendre, pour ne louper aucunes dates. Vous pouvez aussi vous connecter pour ajouter de nouveaux devoirs. </p>
+    </div>
+  </article>
+</section>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+          <div class="row header">
+							<div class="cell">Date de rendu</div>
+              <div class="cell">Module</div>
+              <div class="cell">Professeur</div>
+              <div class="cell">Description</div>
+          </div>
+  
+{% for task in tasks %} 
+<div class="row">
+	<div class="cell" data-title="Date">{{task.deadline |date("d/m/Y")}}</div>
+  <div class="cell" data-title="Module">{{task.module.name}}</div>
+  <div class="cell" data-title="Professeur">{{task.teacher.name}}</div>
+  <div class="cell" data-title="Description">{{task.description}}</div>
+</div>
+{% endfor %}
+   
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
